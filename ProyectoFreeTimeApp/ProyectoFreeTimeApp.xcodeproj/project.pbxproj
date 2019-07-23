@@ -13,6 +13,8 @@
 		501E218A22E7030D006432A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501E218922E7030D006432A1 /* Assets.xcassets */; };
 		501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E218B22E7030D006432A1 /* LaunchScreen.storyboard */; };
 		501E219822E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */; };
+		501E21A322E71495006432A1 /* DateStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A222E71495006432A1 /* DateStoryboard.storyboard */; };
+		501E21A522E71706006432A1 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A422E71706006432A1 /* EventsStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		501E219322E7030E006432A1 /* ProyectoFreeTimeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProyectoFreeTimeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectoFreeTimeAppUITests.swift; sourceTree = "<group>"; };
 		501E219922E7030E006432A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		501E21A222E71495006432A1 /* DateStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DateStoryboard.storyboard; sourceTree = "<group>"; };
+		501E21A422E71706006432A1 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				501E218922E7030D006432A1 /* Assets.xcassets */,
 				501E218B22E7030D006432A1 /* LaunchScreen.storyboard */,
 				501E218E22E7030D006432A1 /* Info.plist */,
+				501E21A222E71495006432A1 /* DateStoryboard.storyboard */,
+				501E21A422E71706006432A1 /* EventsStoryboard.storyboard */,
 			);
 			path = ProyectoFreeTimeApp;
 			sourceTree = "<group>";
@@ -177,9 +183,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501E21A522E71706006432A1 /* EventsStoryboard.storyboard in Resources */,
 				501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */,
 				501E218A22E7030D006432A1 /* Assets.xcassets in Resources */,
 				501E218822E7030D006432A1 /* Main.storyboard in Resources */,
+				501E21A322E71495006432A1 /* DateStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
