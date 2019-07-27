@@ -3,18 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EB315C613BB58F826777F70 /* Pods_ProyectoFreeTimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BE7DDA33EFF6F0671B69C9 /* Pods_ProyectoFreeTimeAppUITests.framework */; };
 		501E218322E7030D006432A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E218222E7030D006432A1 /* AppDelegate.swift */; };
 		501E218522E7030D006432A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E218422E7030D006432A1 /* ViewController.swift */; };
 		501E218822E7030D006432A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E218622E7030D006432A1 /* Main.storyboard */; };
 		501E218A22E7030D006432A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501E218922E7030D006432A1 /* Assets.xcassets */; };
 		501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E218B22E7030D006432A1 /* LaunchScreen.storyboard */; };
 		501E219822E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */; };
-		501E21A322E71495006432A1 /* DateStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A222E71495006432A1 /* DateStoryboard.storyboard */; };
 		501E21A522E71706006432A1 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A422E71706006432A1 /* EventsStoryboard.storyboard */; };
+		501E21A922E9A307006432A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A822E9A307006432A1 /* GoogleService-Info.plist */; };
+		501E21AB22E9A925006432A1 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AA22E9A925006432A1 /* DateViewController.swift */; };
+		501E21AD22E9B9FB006432A1 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AC22E9B9FB006432A1 /* EventsViewController.swift */; };
+		501E21AF22E9BCC9006432A1 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AE22E9BCC9006432A1 /* EventsModel.swift */; };
+		501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */; };
+		C44F6A86A21038A6D5FBC9B5 /* Pods_ProyectoFreeTimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D9511D532D942136B8C8B6 /* Pods_ProyectoFreeTimeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2695E5512E3B506FCFA54595 /* Pods-ProyectoFreeTimeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		321284724FBFAD114E2A8B6D /* Pods-ProyectoFreeTimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeApp.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		501E217F22E7030D006432A1 /* ProyectoFreeTimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFreeTimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		501E218222E7030D006432A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		501E218422E7030D006432A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,8 +46,16 @@
 		501E219322E7030E006432A1 /* ProyectoFreeTimeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProyectoFreeTimeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectoFreeTimeAppUITests.swift; sourceTree = "<group>"; };
 		501E219922E7030E006432A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		501E21A222E71495006432A1 /* DateStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DateStoryboard.storyboard; sourceTree = "<group>"; };
 		501E21A422E71706006432A1 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
+		501E21A822E9A307006432A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		501E21AA22E9A925006432A1 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		501E21AC22E9B9FB006432A1 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		501E21AE22E9BCC9006432A1 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		53C1539A59FAE5DC0EB4F141 /* Pods-ProyectoFreeTimeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5579B7EC5B2C1D03D584F4E8 /* Pods-ProyectoFreeTimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeApp.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp.release.xcconfig"; sourceTree = "<group>"; };
+		A2BE7DDA33EFF6F0671B69C9 /* Pods_ProyectoFreeTimeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoFreeTimeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D9511D532D942136B8C8B6 /* Pods_ProyectoFreeTimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoFreeTimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44F6A86A21038A6D5FBC9B5 /* Pods_ProyectoFreeTimeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB315C613BB58F826777F70 /* Pods_ProyectoFreeTimeAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +84,8 @@
 				501E218122E7030D006432A1 /* ProyectoFreeTimeApp */,
 				501E219622E7030E006432A1 /* ProyectoFreeTimeAppUITests */,
 				501E218022E7030D006432A1 /* Products */,
+				5C913E166F6E0FBCF230C304 /* Pods */,
+				EC5D4278863B93ED963D138E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +101,18 @@
 		501E218122E7030D006432A1 /* ProyectoFreeTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				501E21A822E9A307006432A1 /* GoogleService-Info.plist */,
 				501E218222E7030D006432A1 /* AppDelegate.swift */,
 				501E218422E7030D006432A1 /* ViewController.swift */,
 				501E218622E7030D006432A1 /* Main.storyboard */,
 				501E218922E7030D006432A1 /* Assets.xcassets */,
 				501E218B22E7030D006432A1 /* LaunchScreen.storyboard */,
 				501E218E22E7030D006432A1 /* Info.plist */,
-				501E21A222E71495006432A1 /* DateStoryboard.storyboard */,
 				501E21A422E71706006432A1 /* EventsStoryboard.storyboard */,
+				501E21AA22E9A925006432A1 /* DateViewController.swift */,
+				501E21AC22E9B9FB006432A1 /* EventsViewController.swift */,
+				501E21AE22E9BCC9006432A1 /* EventsModel.swift */,
+				501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */,
 			);
 			path = ProyectoFreeTimeApp;
 			sourceTree = "<group>";
@@ -102,6 +126,26 @@
 			path = ProyectoFreeTimeAppUITests;
 			sourceTree = "<group>";
 		};
+		5C913E166F6E0FBCF230C304 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				321284724FBFAD114E2A8B6D /* Pods-ProyectoFreeTimeApp.debug.xcconfig */,
+				5579B7EC5B2C1D03D584F4E8 /* Pods-ProyectoFreeTimeApp.release.xcconfig */,
+				53C1539A59FAE5DC0EB4F141 /* Pods-ProyectoFreeTimeAppUITests.debug.xcconfig */,
+				2695E5512E3B506FCFA54595 /* Pods-ProyectoFreeTimeAppUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC5D4278863B93ED963D138E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6D9511D532D942136B8C8B6 /* Pods_ProyectoFreeTimeApp.framework */,
+				A2BE7DDA33EFF6F0671B69C9 /* Pods_ProyectoFreeTimeAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 501E219C22E7030E006432A1 /* Build configuration list for PBXNativeTarget "ProyectoFreeTimeApp" */;
 			buildPhases = (
+				E2BB328A0C30205AC44BE4B4 /* [CP] Check Pods Manifest.lock */,
 				501E217B22E7030D006432A1 /* Sources */,
 				501E217C22E7030D006432A1 /* Frameworks */,
 				501E217D22E7030D006432A1 /* Resources */,
+				2BBB573BD1038F111E214704 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 501E219F22E7030E006432A1 /* Build configuration list for PBXNativeTarget "ProyectoFreeTimeAppUITests" */;
 			buildPhases = (
+				7F23C4C236D19877ECD4ED79 /* [CP] Check Pods Manifest.lock */,
 				501E218F22E7030E006432A1 /* Sources */,
 				501E219022E7030E006432A1 /* Frameworks */,
 				501E219122E7030E006432A1 /* Resources */,
+				936F90159912E6A15A573490 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,7 +235,7 @@
 				501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */,
 				501E218A22E7030D006432A1 /* Assets.xcassets in Resources */,
 				501E218822E7030D006432A1 /* Main.storyboard in Resources */,
-				501E21A322E71495006432A1 /* DateStoryboard.storyboard in Resources */,
+				501E21A922E9A307006432A1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,12 +248,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2BBB573BD1038F111E214704 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F23C4C236D19877ECD4ED79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProyectoFreeTimeAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		936F90159912E6A15A573490 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2BB328A0C30205AC44BE4B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProyectoFreeTimeApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		501E217B22E7030D006432A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				501E218522E7030D006432A1 /* ViewController.swift in Sources */,
+				501E21AD22E9B9FB006432A1 /* EventsViewController.swift in Sources */,
+				501E21AB22E9A925006432A1 /* DateViewController.swift in Sources */,
+				501E21AF22E9BCC9006432A1 /* EventsModel.swift in Sources */,
+				501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */,
 				501E218322E7030D006432A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +499,7 @@
 		};
 		501E219D22E7030E006432A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 321284724FBFAD114E2A8B6D /* Pods-ProyectoFreeTimeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -384,6 +518,7 @@
 		};
 		501E219E22E7030E006432A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5579B7EC5B2C1D03D584F4E8 /* Pods-ProyectoFreeTimeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -402,6 +537,7 @@
 		};
 		501E21A022E7030E006432A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C1539A59FAE5DC0EB4F141 /* Pods-ProyectoFreeTimeAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -422,6 +558,7 @@
 		};
 		501E21A122E7030E006432A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2695E5512E3B506FCFA54595 /* Pods-ProyectoFreeTimeAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
