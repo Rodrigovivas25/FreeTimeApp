@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31A80EBD22F4EE0300269D0A /* DetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A80EBC22F4EE0300269D0A /* DetailStoryboard.storyboard */; };
+		31A80EBF22F4F13700269D0A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A80EBE22F4F13700269D0A /* DetailViewController.swift */; };
 		31F2B7D322ECC22300A3EDB2 /* ScheduledEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2B7D222ECC22300A3EDB2 /* ScheduledEventsViewController.swift */; };
 		3EB315C613BB58F826777F70 /* Pods_ProyectoFreeTimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BE7DDA33EFF6F0671B69C9 /* Pods_ProyectoFreeTimeAppUITests.framework */; };
 		501E218322E7030D006432A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E218222E7030D006432A1 /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		2695E5512E3B506FCFA54595 /* Pods-ProyectoFreeTimeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		31A80EBC22F4EE0300269D0A /* DetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailStoryboard.storyboard; sourceTree = "<group>"; };
+		31A80EBE22F4F13700269D0A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		31F2B7D222ECC22300A3EDB2 /* ScheduledEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledEventsViewController.swift; sourceTree = "<group>"; };
 		321284724FBFAD114E2A8B6D /* Pods-ProyectoFreeTimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeApp.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		501E217F22E7030D006432A1 /* ProyectoFreeTimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFreeTimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,8 @@
 				501E21AE22E9BCC9006432A1 /* EventsModel.swift */,
 				501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */,
 				31F2B7D222ECC22300A3EDB2 /* ScheduledEventsViewController.swift */,
+				31A80EBC22F4EE0300269D0A /* DetailStoryboard.storyboard */,
+				31A80EBE22F4F13700269D0A /* DetailViewController.swift */,
 			);
 			path = ProyectoFreeTimeApp;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			files = (
 				501E21A522E71706006432A1 /* EventsStoryboard.storyboard in Resources */,
 				501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */,
+				31A80EBD22F4EE0300269D0A /* DetailStoryboard.storyboard in Resources */,
 				501E218A22E7030D006432A1 /* Assets.xcassets in Resources */,
 				501E218822E7030D006432A1 /* Main.storyboard in Resources */,
 				501E21A922E9A307006432A1 /* GoogleService-Info.plist in Resources */,
@@ -344,6 +351,7 @@
 				31F2B7D322ECC22300A3EDB2 /* ScheduledEventsViewController.swift in Sources */,
 				501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */,
 				501E218322E7030D006432A1 /* AppDelegate.swift in Sources */,
+				31A80EBF22F4F13700269D0A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

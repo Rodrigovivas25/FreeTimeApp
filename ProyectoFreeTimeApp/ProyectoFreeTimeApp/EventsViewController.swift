@@ -114,5 +114,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC")
+        let nv = UINavigationController(rootViewController: detailVC)
+        present(nv, animated: true, completion: nil)
+        
+    }
+    
 }
+
