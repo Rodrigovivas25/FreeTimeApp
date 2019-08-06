@@ -44,7 +44,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     let event = EventsModel(name: eventName as! String, date: eventDate as! String, beginHour: eventBegin as! String, endHour: eventEnd as! String, imageName: "\(eventImage as! String).jpg")
                     
-                    self.eventsList.append(event)
+                    self.eventsList.append(event) 
                 }
                 self.tableView.reloadData()
             }

@@ -23,6 +23,7 @@
 		501E21AD22E9B9FB006432A1 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AC22E9B9FB006432A1 /* EventsViewController.swift */; };
 		501E21AF22E9BCC9006432A1 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AE22E9BCC9006432A1 /* EventsModel.swift */; };
 		501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */; };
+		5A2F9CED22F94BC700E44DA5 /* DetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F9CEC22F94BC700E44DA5 /* DetailCellTableViewCell.swift */; };
 		C44F6A86A21038A6D5FBC9B5 /* Pods_ProyectoFreeTimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D9511D532D942136B8C8B6 /* Pods_ProyectoFreeTimeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		53C1539A59FAE5DC0EB4F141 /* Pods-ProyectoFreeTimeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5579B7EC5B2C1D03D584F4E8 /* Pods-ProyectoFreeTimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeApp.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp.release.xcconfig"; sourceTree = "<group>"; };
+		5A2F9CEC22F94BC700E44DA5 /* DetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellTableViewCell.swift; sourceTree = "<group>"; };
 		A2BE7DDA33EFF6F0671B69C9 /* Pods_ProyectoFreeTimeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoFreeTimeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9511D532D942136B8C8B6 /* Pods_ProyectoFreeTimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoFreeTimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				31F2B7D222ECC22300A3EDB2 /* ScheduledEventsViewController.swift */,
 				31A80EBC22F4EE0300269D0A /* DetailStoryboard.storyboard */,
 				31A80EBE22F4F13700269D0A /* DetailViewController.swift */,
+				5A2F9CEC22F94BC700E44DA5 /* DetailCellTableViewCell.swift */,
 			);
 			path = ProyectoFreeTimeApp;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				501E21AF22E9BCC9006432A1 /* EventsModel.swift in Sources */,
 				31F2B7D322ECC22300A3EDB2 /* ScheduledEventsViewController.swift in Sources */,
 				501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */,
+				5A2F9CED22F94BC700E44DA5 /* DetailCellTableViewCell.swift in Sources */,
 				501E218322E7030D006432A1 /* AppDelegate.swift in Sources */,
 				31A80EBF22F4F13700269D0A /* DetailViewController.swift in Sources */,
 			);

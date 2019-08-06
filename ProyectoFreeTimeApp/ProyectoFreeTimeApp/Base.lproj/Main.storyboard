@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PYm-5x-b8p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jqh-rk-TeI">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,9 +41,6 @@
                                 <state key="normal" title="Eventos programados">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="hLV-SR-1ID" kind="show" id="BGG-DC-gsr"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,7 +63,26 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="114.50892857142857"/>
         </scene>
-        <!--Scheduled Events View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="1Mk-e2-P3s">
+            <objects>
+                <tabBarController id="jqh-rk-TeI" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctR-kB-wRr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BTq-6Y-8Gm" kind="relationship" relationship="viewControllers" id="8K5-pC-NXV"/>
+                        <segue destination="hLV-SR-1ID" kind="relationship" relationship="viewControllers" id="NtR-7X-3oQ"/>
+                        <segue destination="cOy-az-qGL" kind="relationship" relationship="viewControllers" id="cTq-s3-GY6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSZ-Qv-D2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-72" y="1175"/>
+        </scene>
+        <!--Programados-->
         <scene sceneID="tmQ-dI-BNP">
             <objects>
                 <viewController storyboardIdentifier="eventsVC" id="hLV-SR-1ID" customClass="ScheduledEventsViewController" customModule="ProyectoFreeTimeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,10 +92,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qYd-XB-6qf"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Programados" id="JtL-sY-bdy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3S-KG-M2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290" y="838"/>
+            <point key="canvasLocation" x="1329" y="1618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wvG-Vh-mNL">
@@ -164,14 +181,13 @@
                         <outlet property="datePicker" destination="Br7-8e-XB3" id="4Sk-O5-0Xi"/>
                         <outlet property="fromHourPicker" destination="sbv-sF-hjr" id="Thu-0i-b8b"/>
                         <outlet property="toHourPicker" destination="olb-ob-tkG" id="X23-Cj-B9G"/>
-                        <segue destination="BTq-6Y-8Gm" kind="show" identifier="eventSegue" id="qHS-0U-KHe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ci-eh-uwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2289.8550724637685" y="-129.24107142857142"/>
         </scene>
-        <!--Events View Controller-->
+        <!--Eventos-->
         <scene sceneID="S3M-ir-d54">
             <objects>
                 <viewController id="BTq-6Y-8Gm" customClass="EventsViewController" customModule="ProyectoFreeTimeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -180,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Rw-Er-IdQ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="160" id="PdX-BH-ON2" customClass="EventsTableViewCell" customModule="ProyectoFreeTimeApp" customModuleProvider="target">
@@ -244,13 +260,41 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xF0-Z3-MW2"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Eventos" id="qMd-Nd-Hg1"/>
                     <connections>
                         <outlet property="tableView" destination="9Rw-Er-IdQ" id="mPF-0c-6mD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdg-Av-eCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3144.9275362318845" y="-129.24107142857142"/>
+            <point key="canvasLocation" x="1329" y="816"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="a3E-rl-4hh">
+            <objects>
+                <viewController id="cOy-az-qGL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eDf-Uu-qo3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LRC-1x-aPN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LRC-1x-aPN" firstAttribute="top" secondItem="8h2-h3-0ib" secondAttribute="top" id="0xy-gp-e86"/>
+                            <constraint firstItem="LRC-1x-aPN" firstAttribute="leading" secondItem="8h2-h3-0ib" secondAttribute="leading" id="7qw-oT-Ii8"/>
+                            <constraint firstItem="8h2-h3-0ib" firstAttribute="bottom" secondItem="LRC-1x-aPN" secondAttribute="bottom" id="8wB-jC-lXr"/>
+                            <constraint firstItem="8h2-h3-0ib" firstAttribute="trailing" secondItem="LRC-1x-aPN" secondAttribute="trailing" id="IMv-69-7LP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8h2-h3-0ib"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mapa" id="BYJ-HH-11K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YrL-TF-QHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="1166"/>
         </scene>
     </scenes>
 </document>

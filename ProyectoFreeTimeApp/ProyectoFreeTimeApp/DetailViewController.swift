@@ -8,16 +8,28 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
+    @IBOutlet weak var detailTableView: UITableView!
+    
+    var detail: EventsModel!
+    
+    let event = [EventsModel(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")]
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let backButton = UIBarButtonItem(title: "Regresar", style: .done, target: self, action: #selector(dismissList))
+        
+        let backButton = UIBarButtonItem(title: "Volver", style: .done, target: self, action: #selector(dismissList))
         navigationItem.leftBarButtonItem = backButton
-        let addButton = UIBarButtonItem(title: "Agregar Evento", style: .done, target: self, action: #selector(dismissList))
-        navigationItem.rightBarButtonItem = addButton
-        navigationItem.title = "Próximos eventos"
+        navigationItem.title = "Información del evento"
+        
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
+
     }
     
     @objc func dismissList(){
@@ -34,5 +46,21 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? DetailCellTableViewCell else { return UITableViewCell() }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        let detail = EventsModel.init(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")
+       
+        return 0
+        
+        
+    }
+    
 
 }
