@@ -36,13 +36,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.eventsList.removeAll()
                 for events in snapshot.children.allObjects as! [DataSnapshot]{
                     let eventObject = events.value as? [String:AnyObject]
-                    let eventName = eventObject?["Nombre"]
-                    let eventDate = eventObject?["Fecha"]
-                    let eventBegin = eventObject?["HoraInicio"]
-                    let eventEnd = eventObject?["HoraFin"]
-                    let eventImage = eventObject?["Imagen"]
                     
-                    let event = EventsModel(name: eventName as! String, date: eventDate as! String, beginHour: eventBegin as! String, endHour: eventEnd as! String, imageName: "\(eventImage as! String).jpg")
+                    let event = EventsModel(name: eventObject?["Nombre"] as? String ?? "", beginDate: eventObject?["FechaInicio"] as? String ?? "", endDate: eventObject?["FechaFin"] as? String ?? "", beginHour: eventObject?["HoraInicio"] as? String ?? "", endHour: eventObject?["HoraFin"] as? String ?? "", imageName: "\(String(describing: eventObject?["Imagen"] as? String ?? "")).jpg", latitud: eventObject?["Latitud"] as? Double ?? 0.0, longitud: eventObject?["Longitud"] as? Double ?? 0.0, category: eventObject?["Categoria"] as? String ?? "", price: eventObject?["Precio"] as? Double ?? 0.0)
                     
                     self.eventsList.append(event) 
                 }
@@ -59,26 +54,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return eventsList.count
     }
     
-    /*func getImage(imageName: String) -> UIImage{
-        var picture: UIImage!
-        let downloadImageRef = imageReference.child(imageName)
-        
-        let downloadTask = downloadImageRef.getData(maxSize: 1024*1024*12) { (data, error) in
-            if let data = data{
-                picture = UIImage(data: data)
-                
-            }
-            print(error ?? "No error")
-        }
-        
-        downloadTask.observe(.progress) { (snapshot) in
-            print(snapshot.progress ?? "Terminó")
-        }
-        
-        downloadTask.resume()
-        
-        return picture
-    }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventsTableViewCell
@@ -87,12 +62,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let downloadImageRef = imageReference.child(event.imageName)
         
-        let downloadTask = downloadImageRef.getData(maxSize: 1024*1024*12) { (data, error) in
-            //if let data = data{
-            //    let picture = UIImage(data: data)
-            //    self.imagesList.append(picture!)
-            //}
+        downloadImageRef.getData(maxSize: 1024*1024*12) { (data, error) in
+            /*if let data = data{
+                let picture = UIImage(data: data)
+                self.imagesList.append(picture!)
+            }*/
             //print(error ?? "No error")
+            //cell.eventImage.image = UIImage(data: data!)
             if error != nil{
                 print("cargando")
             }
@@ -108,9 +84,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         downloadTask.resume()*/
         
         cell.nameLabel.text = event.name
-        cell.dateLabel.text = event.date
-        cell.beginLabel.text = event.beginHour
-        cell.endLabel.text = event.endHour
+        cell.beginDate.text = event.beginDate
+        cell.endDate.text = event.endDate
+        cell.beginHour.text = event.beginHour
+        cell.endHour.text = event.endHour
         
         return cell
     }

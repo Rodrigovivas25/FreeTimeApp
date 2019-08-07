@@ -18,11 +18,11 @@
 		501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E218B22E7030D006432A1 /* LaunchScreen.storyboard */; };
 		501E219822E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */; };
 		501E21A522E71706006432A1 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A422E71706006432A1 /* EventsStoryboard.storyboard */; };
-		501E21A922E9A307006432A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A822E9A307006432A1 /* GoogleService-Info.plist */; };
 		501E21AB22E9A925006432A1 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AA22E9A925006432A1 /* DateViewController.swift */; };
 		501E21AD22E9B9FB006432A1 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AC22E9B9FB006432A1 /* EventsViewController.swift */; };
 		501E21AF22E9BCC9006432A1 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AE22E9BCC9006432A1 /* EventsModel.swift */; };
 		501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */; };
+		50D9304922FA7EC200BA6473 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50D9304822FA7EC200BA6473 /* GoogleService-Info.plist */; };
 		5A2F9CED22F94BC700E44DA5 /* DetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F9CEC22F94BC700E44DA5 /* DetailCellTableViewCell.swift */; };
 		C44F6A86A21038A6D5FBC9B5 /* Pods_ProyectoFreeTimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D9511D532D942136B8C8B6 /* Pods_ProyectoFreeTimeApp.framework */; };
 /* End PBXBuildFile section */
@@ -54,11 +54,11 @@
 		501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectoFreeTimeAppUITests.swift; sourceTree = "<group>"; };
 		501E219922E7030E006432A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		501E21A422E71706006432A1 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
-		501E21A822E9A307006432A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		501E21AA22E9A925006432A1 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		501E21AC22E9B9FB006432A1 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		501E21AE22E9BCC9006432A1 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		50D9304822FA7EC200BA6473 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53C1539A59FAE5DC0EB4F141 /* Pods-ProyectoFreeTimeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5579B7EC5B2C1D03D584F4E8 /* Pods-ProyectoFreeTimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeApp.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp.release.xcconfig"; sourceTree = "<group>"; };
 		5A2F9CEC22F94BC700E44DA5 /* DetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		501E218122E7030D006432A1 /* ProyectoFreeTimeApp */ = {
 			isa = PBXGroup;
 			children = (
-				501E21A822E9A307006432A1 /* GoogleService-Info.plist */,
+				50D9304822FA7EC200BA6473 /* GoogleService-Info.plist */,
 				501E218222E7030D006432A1 /* AppDelegate.swift */,
 				501E218422E7030D006432A1 /* ViewController.swift */,
 				501E218622E7030D006432A1 /* Main.storyboard */,
@@ -248,7 +248,7 @@
 				31A80EBD22F4EE0300269D0A /* DetailStoryboard.storyboard in Resources */,
 				501E218A22E7030D006432A1 /* Assets.xcassets in Resources */,
 				501E218822E7030D006432A1 /* Main.storyboard in Resources */,
-				501E21A922E9A307006432A1 /* GoogleService-Info.plist in Resources */,
+				50D9304922FA7EC200BA6473 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var detail: EventsModel!
     
-    let event = [EventsModel(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")]
+    //let event = [EventsModel(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")]
     
     
     
@@ -55,7 +55,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-        let detail = EventsModel.init(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")
+        //let detail = EventsModel.init(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")
        
         return 0
         

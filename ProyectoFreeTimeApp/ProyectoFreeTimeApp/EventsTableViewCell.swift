@@ -11,10 +11,11 @@ import UIKit
 class EventsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var beginLabel: UILabel!
-    @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var beginDate: UILabel!
+    @IBOutlet weak var endDate: UILabel!
+    @IBOutlet weak var beginHour: UILabel!
+    @IBOutlet weak var endHour: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
