@@ -46,7 +46,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         
-        
     }
     
 
@@ -98,6 +97,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let nv = UINavigationController(rootViewController: detailVC)
         present(nv, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func showFilter(_ sender: Any) {
+        let shoppingSB = UIStoryboard(name: "FilterStoryboard", bundle: nil)
+        let shoppingVC = shoppingSB.instantiateViewController(withIdentifier: "filterVC")
+        shoppingVC.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        let navigation = UINavigationController(rootViewController: shoppingVC)
+        present(navigation, animated: true, completion: nil)
     }
     
 }
