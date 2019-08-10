@@ -16,6 +16,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     var eventsRef: DatabaseReference!
+    var event: EventsModel!
     
     var imageReference: StorageReference {
         return Storage.storage().reference().child("imagenes")
@@ -104,11 +105,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
+        /*let storyboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
         let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC")
         let nv = UINavigationController(rootViewController: detailVC)
-        present(nv, animated: true, completion: nil)
-        
+        present(nv, animated: true, completion: nil)*/
+        event = eventsList[indexPath.row]
+        performSegue(withIdentifier: "detailSegue", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func showFilter(_ sender: Any) {
@@ -116,7 +119,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "detailSegue"{
+            guard let detailVC = segue.destination as? DetailViewController else { return }
+            detailVC.event = event
+        }
     }
     
 }

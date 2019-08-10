@@ -170,7 +170,7 @@
                     <tabBarItem key="tabBarItem" title="Eventos" image="home" id="qMd-Nd-Hg1"/>
                     <connections>
                         <outlet property="tableView" destination="9Rw-Er-IdQ" id="mPF-0c-6mD"/>
-                        <segue destination="zlk-aT-ear" kind="show" id="LJG-yd-HM8"/>
+                        <segue destination="zlk-aT-ear" kind="show" identifier="detailSegue" id="LJG-yd-HM8"/>
                         <segue destination="kwQ-To-QLv" kind="presentation" identifier="filterSegue" id="bxh-Ea-3Lu"/>
                     </connections>
                 </viewController>
