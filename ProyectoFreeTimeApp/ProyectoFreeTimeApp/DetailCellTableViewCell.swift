@@ -10,6 +10,16 @@ import UIKit
 
 class DetailCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var beginDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var beginHourLabel: UILabel!
+    @IBOutlet weak var endHourLabel: UILabel!
+    //@IBOutlet weak var imageEvent: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

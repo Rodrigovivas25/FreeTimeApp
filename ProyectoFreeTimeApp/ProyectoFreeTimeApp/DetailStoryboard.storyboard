@@ -13,7 +13,7 @@
         <!--Detail View Controller-->
         <scene sceneID="kTX-ga-Yb1">
             <objects>
-                <viewController storyboardIdentifier="detailVC" id="zmC-LD-MNr" customClass="DetailViewController" customModule="ProyectoFreeTimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zmC-LD-MNr" customClass="DetailViewController" customModule="ProyectoFreeTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E19-BY-2gn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +95,15 @@
                                                 </mapView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="beginDateLabel" destination="zmm-iM-73w" id="nmf-sr-6uN"/>
+                                            <outlet property="beginHourLabel" destination="9D7-4T-rwp" id="cWF-3u-EGw"/>
+                                            <outlet property="categoryLabel" destination="dlc-GD-Tc5" id="Pwl-zl-l20"/>
+                                            <outlet property="endDateLabel" destination="06C-ec-zQE" id="3hX-eg-uzj"/>
+                                            <outlet property="endHourLabel" destination="Wyn-07-4KE" id="VTf-yb-ghs"/>
+                                            <outlet property="nameLabel" destination="bbN-AG-WHI" id="dyp-dy-O5V"/>
+                                            <outlet property="priceLabel" destination="uko-TX-v2k" id="nKO-9m-gaA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

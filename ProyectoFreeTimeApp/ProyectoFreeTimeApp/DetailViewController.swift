@@ -14,11 +14,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var detailTableView: UITableView!
     
+
     var detail: EventsModel!
     
-    //let event = [EventsModel(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")]
-    
-    
+     let event = EventsModel(name: [""] as? String ?? "", beginDate: ["FechaInicio"] as? String ?? "", endDate: ["FechaFin"] as? String ?? "", beginHour: ["HoraInicio"] as? String ?? "", endHour: ["HoraFin"] as? String ?? "", imageName: "\(String(describing: ["Imagen"] as? String ?? "")).jpg", latitud: ["Latitud"] as? Double ?? 0.0, longitud: ["Longitud"] as? Double ?? 0.0, category: ["Categoria"] as? String ?? "", price: ["Precio"] as? Double ?? 0.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +36,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
+
     /*
     // MARK: - Navigation
 
@@ -47,20 +47,23 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     */
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DetailContainer.shared.showEvent().count
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? DetailCellTableViewCell else { return UITableViewCell() }
+        let item = DetailContainer.shared.showEvent()[indexPath.row]
+        cell.nameLabel?.text = item.name
+        cell.beginDateLabel?.text = item.beginDate
+        cell.endDateLabel?.text = item.endDate
+        cell.beginHourLabel?.text = item.beginHour
+        cell.endHourLabel?.text = item.endHour
+        cell.imageView?.image = UIImage(named: item.imageName)
+        cell.categoryLabel?.text = item.category
+        //cell.priceLabel. = item.price
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        //let detail = EventsModel.init(name: "eventName", date: "eventDate", beginHour: "eventBegin", endHour: "eventEnd", imageName: "\("eventImage").jpg")
-       
-        return 0
-        
-        
-    }
-    
-
 }
+

@@ -11,6 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,6 +46,17 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
+        
+    }
+    
+    @objc func showEvent(){
+        //Se crea la referencia del storyboard
+        let detailStoryboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
+        let detailVC = detailStoryboard.instantiateViewController(withIdentifier: "detailVC")
+        //Se crea un navigation controller
+        let nv = UINavigationController(rootViewController: detailVC)
+        //Se presenta el navigation controller
+        present(nv, animated: true, completion: nil)
         
     }
     

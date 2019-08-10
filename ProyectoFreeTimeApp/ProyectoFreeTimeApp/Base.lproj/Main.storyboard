@@ -39,7 +39,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qYd-XB-6qf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Programados" id="JtL-sY-bdy"/>
+                    <tabBarItem key="tabBarItem" title="Programados" image="calendar" id="JtL-sY-bdy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3S-KG-M2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,14 +167,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xF0-Z3-MW2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Eventos" id="qMd-Nd-Hg1"/>
+                    <tabBarItem key="tabBarItem" title="Eventos" image="home" id="qMd-Nd-Hg1"/>
                     <connections>
                         <outlet property="tableView" destination="9Rw-Er-IdQ" id="mPF-0c-6mD"/>
+                        <segue destination="zlk-aT-ear" kind="show" id="LJG-yd-HM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdg-Av-eCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328.985507246377" y="815.625"/>
+        </scene>
+        <!--detailVC-->
+        <scene sceneID="0ZH-em-mcb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailStoryboard" referencedIdentifier="detailVC" id="zlk-aT-ear" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqZ-p7-AXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1947" y="623"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="a3E-rl-4hh">
@@ -197,11 +206,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8h2-h3-0ib"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" id="BYJ-HH-11K"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="location" id="BYJ-HH-11K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrL-TF-QHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2590" y="1166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="location" width="30" height="30"/>
+    </resources>
 </document>
