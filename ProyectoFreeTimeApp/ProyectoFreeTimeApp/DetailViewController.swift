@@ -7,33 +7,50 @@
 //
 
 import UIKit
+import Firebase
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailViewController: UIViewController {
     
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var beginDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var beginHourLabel: UILabel!
+    @IBOutlet weak var endHourLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
-
-    @IBOutlet weak var detailTableView: UITableView!
-    
-
-    var detail: EventsModel!
-    
-     let event = EventsModel(name: [""] as? String ?? "", beginDate: ["FechaInicio"] as? String ?? "", endDate: ["FechaFin"] as? String ?? "", beginHour: ["HoraInicio"] as? String ?? "", endHour: ["HoraFin"] as? String ?? "", imageName: "\(String(describing: ["Imagen"] as? String ?? "")).jpg", latitud: ["Latitud"] as? Double ?? 0.0, longitud: ["Longitud"] as? Double ?? 0.0, category: ["Categoria"] as? String ?? "", price: ["Precio"] as? Double ?? 0.0)
+    var event: EventsModel!
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("imagenes")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backButton = UIBarButtonItem(title: "Volver", style: .done, target: self, action: #selector(dismissList))
-        navigationItem.leftBarButtonItem = backButton
+        
         navigationItem.title = "Información del evento"
         
-        detailTableView.delegate = self
-        detailTableView.dataSource = self
-
+        let downloadImageRef = imageReference.child(event.imageName)
+        
+        downloadImageRef.getData(maxSize: 1024*1024*12) { (data, error) in
+            if error != nil{
+                print("cargando")
+            }
+            else{
+                self.eventImage.image = UIImage(data: data!)
+            }
+        }
+        
+        nameLabel.text = event.name
+        beginDateLabel.text = event.beginDate
+        endDateLabel.text = event.endDate
+        beginHourLabel.text = event.beginHour
+        endHourLabel.text = event.endHour
+        categoryLabel.text = event.category
+        priceLabel.text = "$\(event.price)"
     }
-    
-    @objc func dismissList(){
-        dismiss(animated: true, completion: nil)
-    }
+<<<<<<< HEAD
 
     /*
     // MARK: - Navigation
@@ -44,24 +61,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Pass the selected object to the new view controller.
     }
     */
+=======
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DetailContainer.shared.showEvent().count
-        
+>>>>>>> 796d2ca6af64c520478ab7e096eaed24478dbe19
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? DetailCellTableViewCell else { return UITableViewCell() }
-        let item = DetailContainer.shared.showEvent()[indexPath.row]
-        cell.nameLabel?.text = item.name
-        cell.beginDateLabel?.text = item.beginDate
-        cell.endDateLabel?.text = item.endDate
-        cell.beginHourLabel?.text = item.beginHour
-        cell.endHourLabel?.text = item.endHour
-        cell.imageView?.image = UIImage(named: item.imageName)
-        cell.categoryLabel?.text = item.category
-        //cell.priceLabel. = item.price
-        return cell
-    }
 }
 
