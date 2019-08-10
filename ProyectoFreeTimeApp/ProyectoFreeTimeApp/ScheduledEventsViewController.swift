@@ -17,6 +17,8 @@ class ScheduledEventsViewController: UIViewController {
         self.title = "Eventos Programados"
     }
     
+    
+    
     /*
     // MARK: - Navigation
 

@@ -112,11 +112,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func showFilter(_ sender: Any) {
-        let shoppingSB = UIStoryboard(name: "FilterStoryboard", bundle: nil)
-        let shoppingVC = shoppingSB.instantiateViewController(withIdentifier: "filterVC")
-        shoppingVC.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-        let navigation = UINavigationController(rootViewController: shoppingVC)
-        present(navigation, animated: true, completion: nil)
+        performSegue(withIdentifier: "filterSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
     
 }
