@@ -32,6 +32,5 @@ class ViewController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
         
         self.title = "Free Time App"
-
     }
 }

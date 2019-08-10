@@ -34,8 +34,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc func dismissList(){
         dismiss(animated: true, completion: nil)
     }
-    
-
 
     /*
     // MARK: - Navigation

@@ -20,4 +20,3 @@ struct EventsModel {
     var category: String
     var price: Double
 }
-
