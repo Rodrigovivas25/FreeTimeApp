@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import MapKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,6 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var addButton: UIBarButtonItem!
     
+    @IBOutlet weak var map: MKMapView!
     var event: EventsModel!
     var imageReference: StorageReference {
         return Storage.storage().reference().child("imagenes")
@@ -51,6 +53,15 @@ class DetailViewController: UIViewController {
         categoryLabel.text = event.category
         priceLabel.text = "$\(event.price)"
         addressLabel.text = event.address
+        
+        var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
+        coordinate.latitude = event.latitud
+        coordinate.longitude = event.longitud
+        
+        let annotation: MKPointAnnotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = event.address
+        map.addAnnotation(annotation)
         
     }
     
@@ -92,6 +103,7 @@ class DetailViewController: UIViewController {
             newTask.category = self.event.category
             newTask.price = self.event.price
             newTask.address = self.event.address
+            newTask.place = self.event.place
             
             do{
                 try realm.write {

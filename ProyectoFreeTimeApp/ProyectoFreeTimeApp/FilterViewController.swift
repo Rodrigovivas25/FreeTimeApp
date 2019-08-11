@@ -8,14 +8,20 @@
 
 import UIKit
 
-class FilterViewController: UIViewController {
+class FilterViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var radioButton1: UIButton!
     @IBOutlet weak var radioButton2: UIButton!
     @IBOutlet weak var radioButton3: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    var placesArray = ["Todos","MUAC", "CCU"]
+    
+    var selectedPlace = "Todos"
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pickerView.dataSource = self
+        pickerView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -47,17 +53,24 @@ class FilterViewController: UIViewController {
         }
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return placesArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return placesArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedPlace = placesArray[row]
+    }
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

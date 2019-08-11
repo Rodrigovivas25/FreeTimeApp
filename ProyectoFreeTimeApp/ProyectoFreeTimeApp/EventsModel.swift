@@ -40,6 +40,7 @@ class Task: Object {
     @objc dynamic var category = ""
     @objc dynamic var price = 0.0
     @objc dynamic var address = ""
+    @objc dynamic var place = ""
     
 }
 
@@ -55,4 +56,5 @@ struct EventsModel {
     var category: String
     var price: Double
     var address: String
+    var place: String
 }

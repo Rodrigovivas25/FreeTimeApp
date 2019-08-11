@@ -23,6 +23,18 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
+        
+        for places in DetailContainer.shared.showEvent(){
+            var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
+            coordinate.latitude = places.latitud
+            coordinate.longitude = places.longitud
+            
+            let annotation: MKPointAnnotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = places.address
+            mapView.addAnnotation(annotation)
+            
+        }
 
     }
     

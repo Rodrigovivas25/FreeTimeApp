@@ -32,6 +32,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.rowHeight = 160
         
+        
+        
         eventsRef = Database.database().reference().child("eventos")
         eventsRef.observe(DataEventType.value) { (snapshot) in
             if snapshot.childrenCount > 0{
@@ -39,9 +41,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 for events in snapshot.children.allObjects as! [DataSnapshot]{
                     let eventObject = events.value as? [String:AnyObject]
                     
-                    let event = EventsModel(name: eventObject?["Nombre"] as? String ?? "", beginDate: eventObject?["FechaInicio"] as? String ?? "", endDate: eventObject?["FechaFin"] as? String ?? "", beginHour: eventObject?["HoraInicio"] as? String ?? "", endHour: eventObject?["HoraFin"] as? String ?? "", imageName: "\(String(describing: eventObject?["Imagen"] as? String ?? "")).jpg", latitud: eventObject?["Latitud"] as? Double ?? 0.0, longitud: eventObject?["Longitud"] as? Double ?? 0.0, category: eventObject?["Categoria"] as? String ?? "", price: eventObject?["Precio"] as? Double ?? 0.00, address: eventObject?["Direccion"] as? String ?? "")
+                    let event = EventsModel(name: eventObject?["Nombre"] as? String ?? "", beginDate: eventObject?["FechaInicio"] as? String ?? "", endDate: eventObject?["FechaFin"] as? String ?? "", beginHour: eventObject?["HoraInicio"] as? String ?? "", endHour: eventObject?["HoraFin"] as? String ?? "", imageName: "\(String(describing: eventObject?["Imagen"] as? String ?? "")).jpg", latitud: eventObject?["Latitud"] as? Double ?? 0.0, longitud: eventObject?["Longitud"] as? Double ?? 0.0, category: eventObject?["Categoria"] as? String ?? "", price: eventObject?["Precio"] as? Double ?? 0.00, address: eventObject?["Direccion"] as? String ?? "", place: eventObject?["Recinto"] as? String ?? "")
                     
-                    self.eventsList.append(event) 
+                    self.eventsList.append(event)
+                    DetailContainer.shared.addItem(item: event)
+                    self.filterList.append(event)
                 }
                 self.tableView.reloadData()
             }
@@ -49,38 +53,20 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
     }
-    
-//    @objc func showEvent(){
-//        //Se crea la referencia del storyboard
-//        let detailStoryboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
-//        let detailVC = detailStoryboard.instantiateViewController(withIdentifier: "detailVC")
-//        //Se crea un navigation controller
-//        let nv = UINavigationController(rootViewController: detailVC)
-//        //Se presenta el navigation controller
-//        present(nv, animated: true, completion: nil)
-//
-//    }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventsList.count
+        return filterList.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventsTableViewCell
         let event: EventsModel
-        event = eventsList[indexPath.row]
+        event = filterList[indexPath.row]
         
         let downloadImageRef = imageReference.child(event.imageName)
         
         downloadImageRef.getData(maxSize: 1024*1024*12) { (data, error) in
-            /*if let data = data{
-                let picture = UIImage(data: data)
-                self.imagesList.append(picture!)
-            }*/
-            //print(error ?? "No error")
-            //cell.eventImage.image = UIImage(data: data!)
             if error != nil{
                 print("cargando")
             }
@@ -105,7 +91,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        event = eventsList[indexPath.row]
+        event = filterList[indexPath.row]
         performSegue(withIdentifier: "detailSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -114,8 +100,83 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         performSegue(withIdentifier: "filterSegue", sender: nil)
     }
     
+    
+    
     @IBAction func getFilterInformation(_ sender: UIStoryboardSegue){
+        
         guard let filterVC = sender.source as? FilterViewController else { return }
+        if filterVC.selectedPlace == "Todos"{
+            if filterVC.radioButton1.isSelected{
+                filterList.removeAll()
+                for event in eventsList{
+                    if event.category == filterVC.radioButton1.currentTitle{
+                        filterList.append(event)
+                        
+                    }
+                }
+                tableView.reloadData()
+            } else if filterVC.radioButton2.isSelected{
+                filterList.removeAll()
+                for event in eventsList{
+                    if event.category == filterVC.radioButton2.currentTitle{
+                        
+                        filterList.append(event)
+                        
+                    }
+                }
+                tableView.reloadData()
+                
+            } else if filterVC.radioButton3.isSelected{
+                filterList.removeAll()
+                for event in eventsList{
+                    if event.category == filterVC.radioButton3.currentTitle{
+                        filterList.append(event)
+                        tableView.reloadData()
+                    }
+                }
+                tableView.reloadData()
+            }
+            else{
+                filterList = eventsList
+                tableView.reloadData()
+            }
+        }else{
+            if filterVC.radioButton1.isSelected{
+                filterList.removeAll()
+                for event in eventsList{
+                    if event.category == filterVC.radioButton1.currentTitle && event.place == filterVC.selectedPlace{
+                        filterList.append(event)
+                        
+                    }
+                }
+                tableView.reloadData()
+            } else if filterVC.radioButton2.isSelected{
+                filterList.removeAll()
+                for event in eventsList{
+                    if event.category == filterVC.radioButton2.currentTitle  && event.place == filterVC.selectedPlace{
+                        
+                        filterList.append(event)
+                        
+                    }
+                }
+                tableView.reloadData()
+                
+            } else if filterVC.radioButton3.isSelected {
+                filterList.removeAll()
+                for event in eventsList{
+                    if event.category == filterVC.radioButton3.currentTitle && event.place == filterVC.selectedPlace{
+                        filterList.append(event)
+                        tableView.reloadData()
+                    }
+                }
+                tableView.reloadData()
+            }
+            else{
+                filterList = eventsList
+                tableView.reloadData()
+            }
+        }
+        
         
     }
     
