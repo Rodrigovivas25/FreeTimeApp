@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -24,6 +23,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var eventsList = [EventsModel]()
     var imagesList = [UIImage]()
+    var filterList = [EventsModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +112,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func showFilter(_ sender: Any) {
         performSegue(withIdentifier: "filterSegue", sender: nil)
+    }
+    
+    @IBAction func getFilterInformation(_ sender: UIStoryboardSegue){
+        guard let filterVC = sender.source as? FilterViewController else { return }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

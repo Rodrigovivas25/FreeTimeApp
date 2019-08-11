@@ -77,6 +77,31 @@ class DetailViewController: UIViewController {
         
         buttonActionSheet.addAction(UIAlertAction(title: "Agregar", style: .default, handler: { (action) in
             DetailContainer.shared.addItem(item: self.event)
+            
+            
+            guard let realm = LocalDatabaseManager.realm else{ return }
+            let nextTaskId = (realm.objects(Task.self).max(ofProperty: "id") as Int? ?? 0) + 1
+            let newTask = Task()
+            newTask.id = nextTaskId
+            newTask.name = self.event.name
+            newTask.beginDate = self.event.beginDate
+            newTask.endDate = self.event.endDate
+            newTask.beginHour = self.event.beginHour
+            newTask.endHour = self.event.endHour
+            newTask.imageName = self.event.imageName
+            newTask.category = self.event.category
+            newTask.price = self.event.price
+            newTask.address = self.event.address
+            
+            do{
+                try realm.write {
+                    realm.add(newTask)
+                }
+            }catch let error as NSError{
+                print(error.localizedDescription)
+            }
+            
+            
             let message = UIAlertController(title: "Agregado", message: "¡El evento fue agregado a tu lista!", preferredStyle: .alert)
             let acceptAction = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) in
                 self.dismiss(animated: true, completion: nil)

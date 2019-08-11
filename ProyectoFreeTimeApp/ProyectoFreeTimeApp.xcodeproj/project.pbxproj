@@ -11,7 +11,6 @@
 		31A80EBF22F4F13700269D0A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A80EBE22F4F13700269D0A /* DetailViewController.swift */; };
 		3EB315C613BB58F826777F70 /* Pods_ProyectoFreeTimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BE7DDA33EFF6F0671B69C9 /* Pods_ProyectoFreeTimeAppUITests.framework */; };
 		501E218322E7030D006432A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E218222E7030D006432A1 /* AppDelegate.swift */; };
-		501E218522E7030D006432A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E218422E7030D006432A1 /* ViewController.swift */; };
 		501E218822E7030D006432A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E218622E7030D006432A1 /* Main.storyboard */; };
 		501E218A22E7030D006432A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501E218922E7030D006432A1 /* Assets.xcassets */; };
 		501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E218B22E7030D006432A1 /* LaunchScreen.storyboard */; };
@@ -22,6 +21,10 @@
 		501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */; };
 		50D9305122FF3ED600BA6473 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D9305022FF3ED600BA6473 /* FilterViewController.swift */; };
 		50D9305322FFF02100BA6473 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50D9305222FFF02100BA6473 /* GoogleService-Info.plist */; };
+		50D93056230078BC00BA6473 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D93054230078BB00BA6473 /* Realm.framework */; };
+		50D93057230078BC00BA6473 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50D93054230078BB00BA6473 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50D93058230078BC00BA6473 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D93055230078BB00BA6473 /* RealmSwift.framework */; };
+		50D93059230078BC00BA6473 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50D93055230078BB00BA6473 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		779269D922FF7FEE00ACC768 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779269D822FF7FEE00ACC768 /* EventListViewController.swift */; };
 		779269DB22FF88CE00ACC768 /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779269DA22FF88CE00ACC768 /* EventListTableViewCell.swift */; };
 		779269E022FF903D00ACC768 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779269DF22FF903D00ACC768 /* DetailTableViewCell.swift */; };
@@ -40,6 +43,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		50D9305A230078BC00BA6473 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				50D93059230078BC00BA6473 /* RealmSwift.framework in Embed Frameworks */,
+				50D93057230078BC00BA6473 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2695E5512E3B506FCFA54595 /* Pods-ProyectoFreeTimeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		31A80EBC22F4EE0300269D0A /* DetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailStoryboard.storyboard; sourceTree = "<group>"; };
@@ -47,7 +65,6 @@
 		321284724FBFAD114E2A8B6D /* Pods-ProyectoFreeTimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeApp.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		501E217F22E7030D006432A1 /* ProyectoFreeTimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFreeTimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		501E218222E7030D006432A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		501E218422E7030D006432A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		501E218722E7030D006432A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		501E218922E7030D006432A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		501E218C22E7030D006432A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +78,8 @@
 		501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		50D9305022FF3ED600BA6473 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		50D9305222FFF02100BA6473 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		50D93054230078BB00BA6473 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		50D93055230078BB00BA6473 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		53C1539A59FAE5DC0EB4F141 /* Pods-ProyectoFreeTimeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeAppUITests/Pods-ProyectoFreeTimeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5579B7EC5B2C1D03D584F4E8 /* Pods-ProyectoFreeTimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFreeTimeApp.release.xcconfig"; path = "Target Support Files/Pods-ProyectoFreeTimeApp/Pods-ProyectoFreeTimeApp.release.xcconfig"; sourceTree = "<group>"; };
 		779269D822FF7FEE00ACC768 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D93056230078BC00BA6473 /* Realm.framework in Frameworks */,
 				C44F6A86A21038A6D5FBC9B5 /* Pods_ProyectoFreeTimeApp.framework in Frameworks */,
+				50D93058230078BC00BA6473 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +116,8 @@
 		501E217622E7030D006432A1 = {
 			isa = PBXGroup;
 			children = (
+				50D93054230078BB00BA6473 /* Realm.framework */,
+				50D93055230078BB00BA6473 /* RealmSwift.framework */,
 				779269D722FF7FA400ACC768 /* Programados */,
 				501E218122E7030D006432A1 /* ProyectoFreeTimeApp */,
 				501E219622E7030E006432A1 /* ProyectoFreeTimeAppUITests */,
@@ -118,7 +141,6 @@
 			children = (
 				50D9305222FFF02100BA6473 /* GoogleService-Info.plist */,
 				501E218222E7030D006432A1 /* AppDelegate.swift */,
-				501E218422E7030D006432A1 /* ViewController.swift */,
 				501E218622E7030D006432A1 /* Main.storyboard */,
 				501E218922E7030D006432A1 /* Assets.xcassets */,
 				501E218B22E7030D006432A1 /* LaunchScreen.storyboard */,
@@ -187,6 +209,7 @@
 				501E217C22E7030D006432A1 /* Frameworks */,
 				501E217D22E7030D006432A1 /* Resources */,
 				2BBB573BD1038F111E214704 /* [CP] Embed Pods Frameworks */,
+				50D9305A230078BC00BA6473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,7 +387,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501E218522E7030D006432A1 /* ViewController.swift in Sources */,
 				501E21AD22E9B9FB006432A1 /* EventsViewController.swift in Sources */,
 				501E21AF22E9BCC9006432A1 /* EventsModel.swift in Sources */,
 				77A1CBC522FE88B000955C08 /* DetailContainer.swift in Sources */,
@@ -540,6 +562,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3D72468GWU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProyectoFreeTimeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,6 +585,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3D72468GWU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProyectoFreeTimeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

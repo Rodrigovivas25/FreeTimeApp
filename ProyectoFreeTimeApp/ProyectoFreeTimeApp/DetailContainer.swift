@@ -24,6 +24,10 @@ class DetailContainer {
     func addItem(item:EventsModel) {
         arrayContainer.append(item)
     }
+    
+    func removeEvent(position: Int){
+        arrayContainer.remove(at: position)
+    }
 
 }
 
