@@ -62,25 +62,29 @@ class DetailViewController: UIViewController {
         present(nv, animated: true, completion: nil)
         
     }
-
-
     
     @IBAction func back(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func addAction(_ sender: Any) {
         
         let buttonActionSheet = UIAlertController(title: "Free Time App", message: "¿Quieres agregar a la lista este evento?", preferredStyle: .actionSheet)
         
         
         buttonActionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-        present(buttonActionSheet, animated: true, completion: nil)
+        
         
         buttonActionSheet.addAction(UIAlertAction(title: "Agregar", style: .default, handler: { (action) in
             DetailContainer.shared.addItem(item: self.event)
-            
-            
+            let message = UIAlertController(title: "Agregado", message: "¡El evento fue agregado a tu lista!", preferredStyle: .alert)
+            let acceptAction = UIAlertAction(title: "Aceptar", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+            })
+            message.addAction(acceptAction)
+            self.present(message, animated: true, completion: nil)
         }))
+        present(buttonActionSheet, animated: true, completion: nil)
     }
     
 }

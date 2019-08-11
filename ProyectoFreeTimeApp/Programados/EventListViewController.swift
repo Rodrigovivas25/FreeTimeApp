@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class EventListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var eventListTableView: UITableView!
     
-    
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("imagenes")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +23,6 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         eventListTableView.delegate = self
         eventListTableView.dataSource = self
         eventListTableView.rowHeight = 160
-        
-        
-        
         
 
         
@@ -36,13 +36,23 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventListCell") as? EventsTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventListCell") as? EventListTableViewCell else { return UITableViewCell() }
         //Accedemos al elemento del carrito
         let event = DetailContainer.shared.showEvent()[indexPath.row]
-        cell.nameLabel.text = event.name
+        let downloadImageRef = imageReference.child(event.imageName)
+        
+        downloadImageRef.getData(maxSize: 1024*1024*12) { (data, error) in
+            if error != nil{
+                print("cargando")
+            }
+            else{
+                cell.eventImage.image = UIImage(data: data!)
+            }
+        }
+        cell.eventName.text = event.name
         cell.beginDate.text = event.beginDate
         cell.endDate.text = event.endDate
-        cell.beginHour.text = event.beginHour
+        cell.beginHour.text = event.endHour
         cell.endHour.text = event.endHour
 
         return cell

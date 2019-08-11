@@ -39,7 +39,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 for events in snapshot.children.allObjects as! [DataSnapshot]{
                     let eventObject = events.value as? [String:AnyObject]
                     
-                    let event = EventsModel(name: eventObject?["Nombre"] as? String ?? "", beginDate: eventObject?["FechaInicio"] as? String ?? "", endDate: eventObject?["FechaFin"] as? String ?? "", beginHour: eventObject?["HoraInicio"] as? String ?? "", endHour: eventObject?["HoraFin"] as? String ?? "", imageName: "\(String(describing: eventObject?["Imagen"] as? String ?? "")).jpg", latitud: eventObject?["Latitud"] as? Double ?? 0.0, longitud: eventObject?["Longitud"] as? Double ?? 0.0, category: eventObject?["Categoria"] as? String ?? "", price: eventObject?["Precio"] as? Double ?? 0.00, address: eventObject?["Dirección"] as? String ?? "")
+                    let event = EventsModel(name: eventObject?["Nombre"] as? String ?? "", beginDate: eventObject?["FechaInicio"] as? String ?? "", endDate: eventObject?["FechaFin"] as? String ?? "", beginHour: eventObject?["HoraInicio"] as? String ?? "", endHour: eventObject?["HoraFin"] as? String ?? "", imageName: "\(String(describing: eventObject?["Imagen"] as? String ?? "")).jpg", latitud: eventObject?["Latitud"] as? Double ?? 0.0, longitud: eventObject?["Longitud"] as? Double ?? 0.0, category: eventObject?["Categoria"] as? String ?? "", price: eventObject?["Precio"] as? Double ?? 0.00, address: eventObject?["Direccion"] as? String ?? "")
                     
                     self.eventsList.append(event) 
                 }
