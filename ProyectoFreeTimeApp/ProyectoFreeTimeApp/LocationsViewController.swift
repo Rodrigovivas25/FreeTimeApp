@@ -5,19 +5,23 @@
 //  Created by Ricardo Hernández González on 8/10/19.
 //  Copyright © 2019 Rodrigo. All rights reserved.
 //
-
 import UIKit
 import MapKit
+import CoreLocation
 
 class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-
-
+    
+    
     @IBOutlet weak var mapView: MKMapView!
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
         
         mapView.showsUserLocation = true
         locationManager.delegate = self
@@ -35,7 +39,7 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             mapView.addAnnotation(annotation)
             
         }
-
+        
     }
     
     @IBAction func foundmeButton() {
@@ -62,7 +66,7 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     func alertLocation(tit: String, men: String) {
-        
+
         let alert = UIAlertController(title: tit, message: men, preferredStyle: .alert)
         let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
         alert.addAction(action)
@@ -86,15 +90,16 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         return pin
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+

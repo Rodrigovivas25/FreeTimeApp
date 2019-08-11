@@ -299,13 +299,16 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LRC-1x-aPN">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eJ-Lz-xv4">
-                                <rect key="frame" x="169" y="723" width="76" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="btn"/>
                                 <connections>
-                                    <action selector="foundmeButton" destination="cOy-az-qGL" eventType="touchUpInside" id="5Qz-Iq-lfr"/>
+                                    <outlet property="delegate" destination="cOy-az-qGL" id="xbE-oZ-qej"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlU-bj-HED">
+                                <rect key="frame" x="170" y="729" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn"/>
+                                <connections>
+                                    <action selector="foundmeButton" destination="cOy-az-qGL" eventType="touchUpInside" id="Rdj-qc-fbu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -320,7 +323,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="location" id="BYJ-HH-11K"/>
                     <connections>
-                        <outlet property="mapView" destination="LRC-1x-aPN" id="XW8-eI-lRz"/>
+                        <outlet property="mapView" destination="LRC-1x-aPN" id="6Ae-RD-Si7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrL-TF-QHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
