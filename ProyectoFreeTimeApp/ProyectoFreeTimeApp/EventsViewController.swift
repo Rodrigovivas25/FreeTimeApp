@@ -39,7 +39,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 for events in snapshot.children.allObjects as! [DataSnapshot]{
                     let eventObject = events.value as? [String:AnyObject]
                     
-                    let event = EventsModel(name: eventObject?["Nombre"] as? String ?? "", beginDate: eventObject?["FechaInicio"] as? String ?? "", endDate: eventObject?["FechaFin"] as? String ?? "", beginHour: eventObject?["HoraInicio"] as? String ?? "", endHour: eventObject?["HoraFin"] as? String ?? "", imageName: "\(String(describing: eventObject?["Imagen"] as? String ?? "")).jpg", latitud: eventObject?["Latitud"] as? Double ?? 0.0, longitud: eventObject?["Longitud"] as? Double ?? 0.0, category: eventObject?["Categoria"] as? String ?? "", price: eventObject?["Precio"] as? Double ?? 0.0)
+                    let event = EventsModel(name: eventObject?["Nombre"] as? String ?? "", beginDate: eventObject?["FechaInicio"] as? String ?? "", endDate: eventObject?["FechaFin"] as? String ?? "", beginHour: eventObject?["HoraInicio"] as? String ?? "", endHour: eventObject?["HoraFin"] as? String ?? "", imageName: "\(String(describing: eventObject?["Imagen"] as? String ?? "")).jpg", latitud: eventObject?["Latitud"] as? Double ?? 0.0, longitud: eventObject?["Longitud"] as? Double ?? 0.0, category: eventObject?["Categoria"] as? String ?? "", price: eventObject?["Precio"] as? Double ?? 0.00, address: eventObject?["Dirección"] as? String ?? "")
                     
                     self.eventsList.append(event) 
                 }
@@ -50,16 +50,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    @objc func showEvent(){
-        //Se crea la referencia del storyboard
-        let detailStoryboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
-        let detailVC = detailStoryboard.instantiateViewController(withIdentifier: "detailVC")
-        //Se crea un navigation controller
-        let nv = UINavigationController(rootViewController: detailVC)
-        //Se presenta el navigation controller
-        present(nv, animated: true, completion: nil)
-        
-    }
+//    @objc func showEvent(){
+//        //Se crea la referencia del storyboard
+//        let detailStoryboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
+//        let detailVC = detailStoryboard.instantiateViewController(withIdentifier: "detailVC")
+//        //Se crea un navigation controller
+//        let nv = UINavigationController(rootViewController: detailVC)
+//        //Se presenta el navigation controller
+//        present(nv, animated: true, completion: nil)
+//
+//    }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,10 +105,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let storyboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
-        let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC")
-        let nv = UINavigationController(rootViewController: detailVC)
-        present(nv, animated: true, completion: nil)*/
         event = eventsList[indexPath.row]
         performSegue(withIdentifier: "detailSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)

@@ -19,4 +19,6 @@ struct EventsModel {
     var longitud: Double
     var category: String
     var price: Double
+    var address: String
+    
 }

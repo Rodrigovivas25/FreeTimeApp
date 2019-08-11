@@ -19,6 +19,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var endHourLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     var event: EventsModel!
     var imageReference: StorageReference {
@@ -27,9 +29,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
-        
-        navigationItem.title = "Información del evento"
         
         let downloadImageRef = imageReference.child(event.imageName)
         
@@ -49,25 +50,37 @@ class DetailViewController: UIViewController {
         endHourLabel.text = event.endHour
         categoryLabel.text = event.category
         priceLabel.text = "$\(event.price)"
+        addressLabel.text = event.address
+        
     }
-<<<<<<< HEAD
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-=======
     
->>>>>>> 796d2ca6af64c520478ab7e096eaed24478dbe19
+    @objc func showEvent(){
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let eventsVC = mainStoryboard.instantiateViewController(withIdentifier: "eventsVC")
+        let nv = UINavigationController(rootViewController: eventsVC)
+        present(nv, animated: true, completion: nil)
+        
+    }
+
+
     
     @IBAction func back(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func addAction(_ sender: Any) {
+        
+        let buttonActionSheet = UIAlertController(title: "Free Time App", message: "¿Quieres agregar a la lista este evento?", preferredStyle: .actionSheet)
+        
+        
+        buttonActionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        present(buttonActionSheet, animated: true, completion: nil)
+        
+        buttonActionSheet.addAction(UIAlertAction(title: "Agregar", style: .default, handler: { (action) in
+            DetailContainer.shared.addItem(item: self.event)
+            
+            
+        }))
+    }
     
 }
-

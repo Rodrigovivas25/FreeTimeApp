@@ -32,18 +32,43 @@
         <!--Programados-->
         <scene sceneID="tmQ-dI-BNP">
             <objects>
-                <viewController storyboardIdentifier="eventsVC" id="hLV-SR-1ID" customClass="ScheduledEventsViewController" customModule="ProyectoFreeTimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventsVC" id="hLV-SR-1ID" customClass="EventListViewController" customModule="ProyectoFreeTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ad-ew-QS2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DX7-Xi-QNW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventListCell" rowHeight="168" id="I3W-Uj-oCA" customClass="EventListTableViewCell" customModule="ProyectoFreeTimeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="168"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3W-Uj-oCA" id="5Ve-BH-eOR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="167.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DX7-Xi-QNW" firstAttribute="top" secondItem="qYd-XB-6qf" secondAttribute="top" id="1qs-e6-xif"/>
+                            <constraint firstItem="qYd-XB-6qf" firstAttribute="trailing" secondItem="DX7-Xi-QNW" secondAttribute="trailing" id="BSQ-7q-dj8"/>
+                            <constraint firstItem="DX7-Xi-QNW" firstAttribute="leading" secondItem="qYd-XB-6qf" secondAttribute="leading" id="LbM-bo-YM1"/>
+                            <constraint firstItem="qYd-XB-6qf" firstAttribute="bottom" secondItem="DX7-Xi-QNW" secondAttribute="bottom" id="rNU-hz-Ws4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qYd-XB-6qf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Programados" image="calendar" id="JtL-sY-bdy"/>
+                    <connections>
+                        <outlet property="eventListTableView" destination="DX7-Xi-QNW" id="aOq-ur-3Mp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3S-KG-M2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="1618"/>
+            <point key="canvasLocation" x="1328.985507246377" y="1617.8571428571429"/>
         </scene>
         <!--Eventos-->
         <scene sceneID="S3M-ir-d54">
@@ -148,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="O6r-XL-3pO">
+                                    <navigationItem title="Free Time App" id="O6r-XL-3pO">
                                         <barButtonItem key="rightBarButtonItem" title="Filtro" id="xzx-zq-72z">
                                             <connections>
                                                 <action selector="showFilter:" destination="BTq-6Y-8Gm" id="wN7-Pq-gJp"/>
@@ -189,7 +214,7 @@
         <!--Mapa-->
         <scene sceneID="a3E-rl-4hh">
             <objects>
-                <viewController id="cOy-az-qGL" sceneMemberID="viewController">
+                <viewController id="cOy-az-qGL" customClass="LocationsViewController" customModule="ProyectoFreeTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eDf-Uu-qo3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,6 +222,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LRC-1x-aPN">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eJ-Lz-xv4">
+                                <rect key="frame" x="169" y="723" width="76" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="btn"/>
+                                <connections>
+                                    <action selector="foundmeButton" destination="cOy-az-qGL" eventType="touchUpInside" id="5Qz-Iq-lfr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -208,10 +241,13 @@
                         <viewLayoutGuide key="safeArea" id="8h2-h3-0ib"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="location" id="BYJ-HH-11K"/>
+                    <connections>
+                        <outlet property="mapView" destination="LRC-1x-aPN" id="XW8-eI-lRz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrL-TF-QHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2590" y="1166"/>
+            <point key="canvasLocation" x="2589.8550724637685" y="1165.8482142857142"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="RNr-Qb-pvJ">
@@ -340,6 +376,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn" width="75" height="75"/>
         <image name="calendar" width="30" height="30"/>
         <image name="checked" width="24" height="24"/>
         <image name="home" width="30" height="30"/>

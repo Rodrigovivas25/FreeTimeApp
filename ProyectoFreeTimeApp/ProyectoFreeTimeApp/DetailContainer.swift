@@ -20,6 +20,10 @@ class DetailContainer {
     func showEvent() -> [EventsModel] {
         return arrayContainer
     }
+    
+    func addItem(item:EventsModel) {
+        arrayContainer.append(item)
+    }
 
 }
 

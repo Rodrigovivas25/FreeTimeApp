@@ -31,6 +31,6 @@ class ViewController: UIViewController {
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
-        self.title = "Free Time App"
+       
     }
 }
