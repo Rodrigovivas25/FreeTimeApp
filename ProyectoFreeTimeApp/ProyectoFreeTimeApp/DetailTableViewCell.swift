@@ -2,7 +2,7 @@
 //  DetailTableViewCell.swift
 //  ProyectoFreeTimeApp
 //
-//  Created by Ricardo Hernández González on 8/10/19.
+//  Created by Rodrigo Vivas y Noemí Rodríguez on 8/10/19.
 //  Copyright © 2019 Rodrigo. All rights reserved.
 //
 

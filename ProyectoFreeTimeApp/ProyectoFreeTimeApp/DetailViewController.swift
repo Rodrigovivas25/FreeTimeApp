@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  ProyectoFreeTimeApp
 //
-//  Created by Noemí Rodríguez Sandoval D3 on 8/2/19.
+//  Created by Rodrigo Vivas y Noemí Rodríguez D3 on 8/2/19.
 //  Copyright © 2019 Rodrigo. All rights reserved.
 //
 
