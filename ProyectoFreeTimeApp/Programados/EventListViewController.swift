@@ -21,6 +21,8 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    var event: EventsModel!
+    
     var imageReference: StorageReference {
         return Storage.storage().reference().child("imagenes")
     }
@@ -32,9 +34,7 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         eventListTableView.delegate = self
         eventListTableView.dataSource = self
         eventListTableView.rowHeight = 160
-        
         eventListTableView.reloadData()
-        
         
     }
     
@@ -76,6 +76,8 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        event = DetailContainer.shared.showSaved()[indexPath.row]
+        performSegue(withIdentifier: "detailSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -92,9 +94,16 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(error.localizedDescription)
             }
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            DetailContainer.shared.removeSaved(position: indexPath.row)
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue"{
+            guard let detailVC = segue.destination as? DetailViewController else { return }
+            detailVC.event = event
+        }
+    }
 
     /*
     // MARK: - Navigation

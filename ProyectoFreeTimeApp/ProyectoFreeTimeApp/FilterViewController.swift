@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
+class FilterViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, UINavigationBarDelegate {
 
     @IBOutlet weak var radioButton1: UIButton!
     @IBOutlet weak var radioButton2: UIButton!
@@ -16,14 +16,19 @@ class FilterViewController: UIViewController,UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var navBar: UINavigationBar!
     
-    var placesArray = ["Todos","MUAC", "CCU"]
+    var placesArray = ["Todos","MUAC", "CCU", "Museo Universitario del Chopo"]
     
     var selectedPlace = "Todos"
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
-        // Do any additional setup after loading the view.
+        navBar.delegate = self
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        
+        return UIBarPosition.topAttached
     }
     
     @IBAction func selectRButton1(_ sender: UIButton) {

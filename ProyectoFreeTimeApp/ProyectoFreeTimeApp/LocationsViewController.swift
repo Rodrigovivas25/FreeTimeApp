@@ -36,6 +36,8 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             
         }
         
+        
+        
     }
     
     @IBAction func foundmeButton() {
@@ -69,33 +71,6 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.present(alert, animated: true, completion: nil)
     }
     
-    /*func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let newLocation = locations.last else {return}
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = newLocation.coordinate
-        mapView.addAnnotation(annotation)
-    }*/
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation {
-            return nil
-        }
-        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-        pin.pinTintColor = .orange
-        return pin
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 

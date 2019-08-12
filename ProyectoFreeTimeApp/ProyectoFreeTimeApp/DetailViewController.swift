@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import MapKit
 
-class DetailViewController: UIViewController, MKMapViewDelegate {
+class DetailViewController: UIViewController, MKMapViewDelegate, UINavigationBarDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var eventImage: UIImageView!
@@ -24,6 +24,8 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var addButton: UIBarButtonItem!
     
+    @IBOutlet weak var viewInScroll: UIView!
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var map: MKMapView!
     var event: EventsModel!
     var imageReference: StorageReference {
@@ -33,6 +35,8 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        navBar.delegate = self
+        
         scrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 300, right: 0)
         
         
@@ -65,7 +69,16 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         annotation.title = event.address
         map.addAnnotation(annotation)
         
+        
+        viewInScroll.addSubview(map)
     }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        
+        return UIBarPosition.topAttached
+    }
+    
+    
     
     @objc func showEvent(){
         
@@ -89,7 +102,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         
         
         buttonActionSheet.addAction(UIAlertAction(title: "Agregar", style: .default, handler: { (action) in
-            DetailContainer.shared.addItem(item: self.event)
+            DetailContainer.shared.addToSave(item: self.event)
             
             
             guard let realm = LocalDatabaseManager.realm else{ return }
