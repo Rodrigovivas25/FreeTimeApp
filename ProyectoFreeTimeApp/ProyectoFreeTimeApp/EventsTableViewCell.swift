@@ -2,7 +2,7 @@
 //  EventsTableViewCell.swift
 //  ProyectoFreeTimeApp
 //
-//  Created by Rodrigo Vivas on 7/25/19.
+//  Created by Rodrigo Vivas y Noemí Rodríguez on 7/25/19.
 //  Copyright © 2019 Rodrigo. All rights reserved.
 //
 

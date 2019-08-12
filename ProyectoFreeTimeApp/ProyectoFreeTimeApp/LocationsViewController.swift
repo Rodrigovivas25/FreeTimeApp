@@ -2,7 +2,7 @@
 //  LocationsViewController.swift
 //  ProyectoFreeTimeApp
 //
-//  Created by Ricardo Hernández González on 8/10/19.
+//  Created by Rodrigo Vivas y Noemí Rodríguez on 8/10/19.
 //  Copyright © 2019 Rodrigo. All rights reserved.
 //
 import UIKit
@@ -18,11 +18,30 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.showsUserLocation = true
+        
+        if CLLocationManager.locationServicesEnabled() == true {
+            if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined {
+                
+                locationManager.requestWhenInUseAuthorization()
+            }
+            
+            locationManager.desiredAccuracy = 1.0
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+            
+            
+        } else {
+            print("Please turn on location services or GPS")
+        }
+        
+        
         locationManager.requestWhenInUseAuthorization()
         mapView.showsUserLocation = true
-        locationManager.delegate = self
+        //locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        //locationManager.startUpdatingLocation()
         
         for places in DetailContainer.shared.showEvent(){
             var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
@@ -40,27 +59,13 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
     }
     
-    @IBAction func foundmeButton() {
-        initLocation()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        self.mapView.setRegion(region, animated: true)
     }
     
-    func initLocation() {
-        
-        let authorization = CLLocationManager.authorizationStatus()
-        if authorization == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        } else if authorization == .denied {
-            alertLocation(tit: "Error de localización", men: "Actualmente tiene denegada la localización del dispositivo.")
-        } else if authorization == .restricted {
-            alertLocation(tit: "Error de localización", men: "Actualmente tiene restringida la localización del dispositivo.")
-        } else {
-            
-            guard let currentCoordinate = locationManager.location?.coordinate else { return }
-            
-            
-            let region = MKCoordinateRegion(center: currentCoordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-            mapView.setRegion(region, animated: true)
-        }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Unable to access your current location")
     }
     
     func alertLocation(tit: String, men: String) {
@@ -70,7 +75,28 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
+
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        pin.pinTintColor = .orange
+        return pin
+    }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+
     
 }
 
