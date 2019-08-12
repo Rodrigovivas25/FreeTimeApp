@@ -114,9 +114,10 @@
 		501E217622E7030D006432A1 = {
 			isa = PBXGroup;
 			children = (
+				50D9305C2301209A00BA6473 /* Models */,
+				50D9305B2301206200BA6473 /* Controllers */,
 				50D93054230078BB00BA6473 /* Realm.framework */,
 				50D93055230078BB00BA6473 /* RealmSwift.framework */,
-				779269D722FF7FA400ACC768 /* Programados */,
 				501E218122E7030D006432A1 /* ProyectoFreeTimeApp */,
 				501E219622E7030E006432A1 /* ProyectoFreeTimeAppUITests */,
 				501E218022E7030D006432A1 /* Products */,
@@ -143,15 +144,7 @@
 				501E218922E7030D006432A1 /* Assets.xcassets */,
 				501E218B22E7030D006432A1 /* LaunchScreen.storyboard */,
 				501E218E22E7030D006432A1 /* Info.plist */,
-				501E21AC22E9B9FB006432A1 /* EventsViewController.swift */,
-				501E21AE22E9BCC9006432A1 /* EventsModel.swift */,
-				501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */,
 				31A80EBC22F4EE0300269D0A /* DetailStoryboard.storyboard */,
-				31A80EBE22F4F13700269D0A /* DetailViewController.swift */,
-				779269DF22FF903D00ACC768 /* DetailTableViewCell.swift */,
-				77A1CBC422FE88B000955C08 /* DetailContainer.swift */,
-				50D9305022FF3ED600BA6473 /* FilterViewController.swift */,
-				779269E122FFBCD100ACC768 /* LocationsViewController.swift */,
 			);
 			path = ProyectoFreeTimeApp;
 			sourceTree = "<group>";
@@ -165,6 +158,30 @@
 			path = ProyectoFreeTimeAppUITests;
 			sourceTree = "<group>";
 		};
+		50D9305B2301206200BA6473 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				779269D822FF7FEE00ACC768 /* EventListViewController.swift */,
+				501E21AC22E9B9FB006432A1 /* EventsViewController.swift */,
+				31A80EBE22F4F13700269D0A /* DetailViewController.swift */,
+				50D9305022FF3ED600BA6473 /* FilterViewController.swift */,
+				779269E122FFBCD100ACC768 /* LocationsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		50D9305C2301209A00BA6473 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				779269DA22FF88CE00ACC768 /* EventListTableViewCell.swift */,
+				501E21AE22E9BCC9006432A1 /* EventsModel.swift */,
+				501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */,
+				779269DF22FF903D00ACC768 /* DetailTableViewCell.swift */,
+				77A1CBC422FE88B000955C08 /* DetailContainer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5C913E166F6E0FBCF230C304 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,15 +191,6 @@
 				2695E5512E3B506FCFA54595 /* Pods-ProyectoFreeTimeAppUITests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		779269D722FF7FA400ACC768 /* Programados */ = {
-			isa = PBXGroup;
-			children = (
-				779269D822FF7FEE00ACC768 /* EventListViewController.swift */,
-				779269DA22FF88CE00ACC768 /* EventListTableViewCell.swift */,
-			);
-			path = Programados;
 			sourceTree = "<group>";
 		};
 		EC5D4278863B93ED963D138E /* Frameworks */ = {
