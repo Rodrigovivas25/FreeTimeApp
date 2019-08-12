@@ -18,11 +18,30 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.showsUserLocation = true
+        
+        if CLLocationManager.locationServicesEnabled() == true {
+            if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined {
+                
+                locationManager.requestWhenInUseAuthorization()
+            }
+            
+            locationManager.desiredAccuracy = 1.0
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+            
+            
+        } else {
+            print("Please turn on location services or GPS")
+        }
+        
+        
         locationManager.requestWhenInUseAuthorization()
         mapView.showsUserLocation = true
-        locationManager.delegate = self
+        //locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        //locationManager.startUpdatingLocation()
         
         for places in DetailContainer.shared.showEvent(){
             var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
@@ -38,27 +57,13 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
     }
     
-    @IBAction func foundmeButton() {
-        initLocation()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        self.mapView.setRegion(region, animated: true)
     }
     
-    func initLocation() {
-        
-        let authorization = CLLocationManager.authorizationStatus()
-        if authorization == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        } else if authorization == .denied {
-            alertLocation(tit: "Error de localización", men: "Actualmente tiene denegada la localización del dispositivo.")
-        } else if authorization == .restricted {
-            alertLocation(tit: "Error de localización", men: "Actualmente tiene restringida la localización del dispositivo.")
-        } else {
-            
-            guard let currentCoordinate = locationManager.location?.coordinate else { return }
-            
-            
-            let region = MKCoordinateRegion(center: currentCoordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-            mapView.setRegion(region, animated: true)
-        }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Unable to access your current location")
     }
     
     func alertLocation(tit: String, men: String) {
@@ -68,14 +73,7 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
-    
-    /*func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let newLocation = locations.last else {return}
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = newLocation.coordinate
-        mapView.addAnnotation(annotation)
-    }*/
+
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {

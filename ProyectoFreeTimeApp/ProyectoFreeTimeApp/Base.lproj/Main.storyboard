@@ -377,17 +377,6 @@
                                     <outlet property="delegate" destination="cOy-az-qGL" id="xbE-oZ-qej"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlU-bj-HED">
-                                <rect key="frame" x="123" y="435" width="74" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="Tfx-c9-i5p"/>
-                                    <constraint firstAttribute="height" constant="75" id="bSu-PU-lk8"/>
-                                </constraints>
-                                <state key="normal" image="btn"/>
-                                <connections>
-                                    <action selector="foundmeButton" destination="cOy-az-qGL" eventType="touchUpInside" id="Rdj-qc-fbu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -395,8 +384,6 @@
                             <constraint firstItem="LRC-1x-aPN" firstAttribute="bottom" secondItem="8h2-h3-0ib" secondAttribute="bottom" id="dU6-x4-lA3"/>
                             <constraint firstItem="LRC-1x-aPN" firstAttribute="leading" secondItem="8h2-h3-0ib" secondAttribute="leading" id="i1E-ck-FBX"/>
                             <constraint firstItem="LRC-1x-aPN" firstAttribute="top" secondItem="8h2-h3-0ib" secondAttribute="top" id="lym-cT-Q7s"/>
-                            <constraint firstItem="8h2-h3-0ib" firstAttribute="bottom" secondItem="RlU-bj-HED" secondAttribute="bottom" constant="9" id="sqE-03-hqr"/>
-                            <constraint firstItem="RlU-bj-HED" firstAttribute="centerX" secondItem="eDf-Uu-qo3" secondAttribute="centerX" id="vZu-RP-29L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8h2-h3-0ib"/>
                     </view>
@@ -521,7 +508,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn" width="75" height="75"/>
         <image name="calendar" width="30" height="30"/>
         <image name="checked" width="24" height="24"/>
         <image name="home" width="30" height="30"/>
