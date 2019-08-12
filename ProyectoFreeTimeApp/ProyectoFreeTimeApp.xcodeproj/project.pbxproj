@@ -15,7 +15,6 @@
 		501E218A22E7030D006432A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501E218922E7030D006432A1 /* Assets.xcassets */; };
 		501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E218B22E7030D006432A1 /* LaunchScreen.storyboard */; };
 		501E219822E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */; };
-		501E21A522E71706006432A1 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501E21A422E71706006432A1 /* EventsStoryboard.storyboard */; };
 		501E21AD22E9B9FB006432A1 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AC22E9B9FB006432A1 /* EventsViewController.swift */; };
 		501E21AF22E9BCC9006432A1 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21AE22E9BCC9006432A1 /* EventsModel.swift */; };
 		501E21B122E9BF6F006432A1 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */; };
@@ -72,7 +71,6 @@
 		501E219322E7030E006432A1 /* ProyectoFreeTimeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProyectoFreeTimeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		501E219722E7030E006432A1 /* ProyectoFreeTimeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectoFreeTimeAppUITests.swift; sourceTree = "<group>"; };
 		501E219922E7030E006432A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		501E21A422E71706006432A1 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
 		501E21AC22E9B9FB006432A1 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		501E21AE22E9BCC9006432A1 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				501E218922E7030D006432A1 /* Assets.xcassets */,
 				501E218B22E7030D006432A1 /* LaunchScreen.storyboard */,
 				501E218E22E7030D006432A1 /* Info.plist */,
-				501E21A422E71706006432A1 /* EventsStoryboard.storyboard */,
 				501E21AC22E9B9FB006432A1 /* EventsViewController.swift */,
 				501E21AE22E9BCC9006432A1 /* EventsModel.swift */,
 				501E21B022E9BF6F006432A1 /* EventsTableViewCell.swift */,
@@ -283,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501E21A522E71706006432A1 /* EventsStoryboard.storyboard in Resources */,
 				501E218D22E7030D006432A1 /* LaunchScreen.storyboard in Resources */,
 				31A80EBD22F4EE0300269D0A /* DetailStoryboard.storyboard in Resources */,
 				501E218A22E7030D006432A1 /* Assets.xcassets in Resources */,

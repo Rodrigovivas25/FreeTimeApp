@@ -9,10 +9,13 @@
 import UIKit
 import Firebase
 
-class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationBarDelegate {
     
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     
     var eventsRef: DatabaseReference!
     var event: EventsModel!
@@ -20,6 +23,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var imageReference: StorageReference {
         return Storage.storage().reference().child("imagenes")
     }
+    
     
     var eventsList = [EventsModel]()
     var imagesList = [UIImage]()
@@ -31,8 +35,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 160
-        
-        
+        navBar.delegate = self
         
         eventsRef = Database.database().reference().child("eventos")
         eventsRef.observe(DataEventType.value) { (snapshot) in
@@ -52,6 +55,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        
+        return UIBarPosition.topAttached
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -14,6 +14,7 @@ class FilterViewController: UIViewController,UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var radioButton2: UIButton!
     @IBOutlet weak var radioButton3: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var placesArray = ["Todos","MUAC", "CCU"]
     

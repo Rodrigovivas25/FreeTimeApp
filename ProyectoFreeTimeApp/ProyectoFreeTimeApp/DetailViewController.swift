@@ -12,6 +12,7 @@ import MapKit
 
 class DetailViewController: UIViewController, MKMapViewDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var beginDateLabel: UILabel!
@@ -32,6 +33,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        scrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 300, right: 0)
         
         
         let downloadImageRef = imageReference.child(event.imageName)

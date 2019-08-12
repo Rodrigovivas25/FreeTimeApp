@@ -18,11 +18,7 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
+        locationManager.requestWhenInUseAuthorization()
         mapView.showsUserLocation = true
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -73,13 +69,13 @@ class LocationsViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.present(alert, animated: true, completion: nil)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    /*func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else {return}
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = newLocation.coordinate
         mapView.addAnnotation(annotation)
-    }
+    }*/
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
